@@ -213,7 +213,7 @@ async function updateTodo(id, newText) {
         </div>
 
         {/* Search & Filters */}
-        <div className="flex gap-3 items-center mb-6">
+        {/* <div className="flex gap-3 items-center mb-6">
           <div className="flex-1 relative">
             <input
               value={query}
@@ -238,7 +238,44 @@ async function updateTodo(id, newText) {
             <option value="ACTIVE">ACTIVE</option>
             <option value="COMPLETED">COMPLETED</option>
           </select>
-        </div>
+        </div> */}
+
+        <div className="flex gap-3 items-center mb-6">
+  <div className="flex-1 relative">
+    <input
+      value={query}
+      onChange={(e) => setQuery(e.target.value)}
+      placeholder="Search note..."
+      className={
+        "w-full rounded-md border px-4 py-3 pr-10 " +
+        (dark
+          ? "bg-transparent border-violet-500 text-gray-100"
+          : "bg-white border-gray-700 text-gray-900"
+        )
+      }
+    />
+    <div className="absolute right-3 top-1/2 -translate-y-1/2">
+      <IconSearch />
+    </div>
+  </div>
+
+  <select
+    value={filter}
+    onChange={(e) => setFilter(e.target.value)}
+    className={
+      "px-3 py-2 rounded-md border " +
+      (dark
+        ? "bg-violet-600 text-white border-violet-500"
+        : "bg-white text-gray-900 border-gray-700"
+      )
+    }
+  >
+    <option value="ALL">ALL</option>
+    <option value="ACTIVE">ACTIVE</option>
+    <option value="COMPLETED">COMPLETED</option>
+  </select>
+</div>
+
 
         {/* TASKS */}
         <div className="mt-4">
