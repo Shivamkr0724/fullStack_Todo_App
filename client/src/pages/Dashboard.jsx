@@ -198,7 +198,7 @@ async function updateTodo(id, newText) {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setDark(d => !d)}
-              className={"p-2 rounded-md shadow " + (dark ? "bg-violet-600" : "bg-gray-200")}
+              className={"p-2 rounded-md shadow " + (dark ? "bg-violet-600" : "bg-gray-200 border-gray-700")}
             >
               <IconMoon />
             </button>
