@@ -13,7 +13,7 @@ export default function Login() {
     setErr("");
 
     try {
-      const res = await fetch("https://fullstack-todo-app-s1z7.onrender.com", {  //http://localhost:8000/auth/login
+      const res = await fetch("https://fullstack-todo-app-s1z7.onrender.com/auth/login", {  //http://localhost:8000/auth/login
         method: "POST",
         headers: {
           "Content-Type": "application/json"
