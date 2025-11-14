@@ -19,7 +19,9 @@ connectDB();
 app.use(express.json());
 app.use(cookieparser());
 app.use(cors({
-  origin: "http://localhost:5173", // your React URL
+  origin: ["http://localhost:5173",
+         "https://full-stack-todo-app-ten-omega.vercel.app",   
+], // your React URL
   credentials: true
 }));
 

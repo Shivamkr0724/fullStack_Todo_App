@@ -68,7 +68,7 @@ const [editTask, setEditTask] = useState(null);   // if null → add mode
     async function fetchTodos() {
       try {
         setLoading(true);
-        const res = await fetch("http://localhost:8000/todo", {
+        const res = await fetch("https://fullstack-todo-app-s1z7.onrender.com/todo", {                   //http://localhost:8000/todo
           headers: { Authorization: "Bearer " + localStorage.getItem("token") },
         });
 
