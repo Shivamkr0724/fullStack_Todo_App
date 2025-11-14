@@ -48,7 +48,7 @@ function IconTrash() {
 export default function Dashboard() {
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState('ALL');
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
   const [showModal, setShowModal] = useState(false);
 const [editTask, setEditTask] = useState(null);   // if null → add mode
 
@@ -97,7 +97,7 @@ const [editTask, setEditTask] = useState(null);   // if null → add mode
 
   async function addNewTodo(text) {
   try {
-    const res = await fetch("http://localhost:8000/todo", {
+    const res = await fetch("https://fullstack-todo-app-s1z7.onrender.com/todo", { //http://localhost:8000/todo
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -120,7 +120,7 @@ const [editTask, setEditTask] = useState(null);   // if null → add mode
 // ✅ Toggle task completion
 async function toggleDone(id, done) {
   try {
-    await fetch(`http://localhost:8000/todo/${id}`, {
+    await fetch(`https://fullstack-todo-app-s1z7.onrender.com/todo/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -140,7 +140,7 @@ async function toggleDone(id, done) {
 // ✅ Delete task
 async function deleteTask(id) {
   try {
-    await fetch(`http://localhost:8000/todo/${id}`, {
+    await fetch(`https://fullstack-todo-app-s1z7.onrender.com/todo/${id}`, {
       method: "DELETE",
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("token")
@@ -156,7 +156,7 @@ async function deleteTask(id) {
 // ✅ Edit update (you can use modal or prompt)
 async function updateTodo(id, newText) {
   try {
-    const res = await fetch(`http://localhost:8000/todo/${id}`, {
+    const res = await fetch(`https://fullstack-todo-app-s1z7.onrender.com/todo/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
